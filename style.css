@@ -1,0 +1,444 @@
+:root {
+  --basic-unit: 1vh;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+@font-face {
+  font-family: digital;
+  src: url(./resources/DS-DIGII.TTF);
+}
+
+body, #head, #head > div > div, #screen, #main, #midSec, #midSec > div, #midSec > div > span, #sec1 > div, #final > div .secCom {
+  position: relative;
+}
+
+body, #loadingScreen, #head, #head > div, #main, #sec1 > div:last-child, #midSec > div, #screen, #screen > * {
+  display: flex;
+  justify-content: center;
+}
+
+body, #loadingScreen, #head > div > div, #main > div:first-child, #final, #sec1 > div:last-child, #screen, #screen > *:not(#display) {
+  display: flex;
+  align-items: center;
+}
+
+#midSec, #final > div, #final > div:not(:first-child) > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#loadingScreen, #head > div, #screen > *, #main > div:first-child, #solar_panel, #final, #sec1 > div:not(:last-child) span, #sec1 > div:nth-child(4) hr, #final > div:not(:first-child) span, #sec3 #on hr {
+  position: absolute;
+}
+
+#sec3 #on > *, #sec1 > div:nth-child(4) span:first-child, #sec1 > div:nth-child(4) hr, #sec1 > div:nth-child(4) span:last-child, #midSec > div > span {
+  top: calc(0.75 * var(--basic-unit));
+}
+
+html, body, #loadingScreen {
+  width: 100%;
+  height: 100%;
+}
+
+#loadingScreen span, #midSec > div, #final > div .secCom {
+  color: #fff;
+}
+
+#loadingScreen {
+  background: #932943;
+  z-index: 5;
+  flex-direction: column;
+}
+
+#loadingScreen img {
+  box-shadow: var(--basic-unit) calc(1.5 * var(--basic-unit)) calc(1.5 * var(--basic-unit)) #591212;
+  border-radius: 100%;
+  width: calc(25 * var(--basic-unit));
+}
+
+#loadingScreen span {
+  font-size: calc(7.5 * var(--basic-unit));
+  text-shadow: calc(0.25 * var(--basic-unit)) calc(0.75 * var(--basic-unit)) calc(0.75 * var(--basic-unit)) #410d0d;
+  text-transform: lowercase;
+  font-family: cursive;
+  margin-top: 1rem;
+}
+
+#calc_body {
+  height: calc(80 * var(--basic-unit));
+  width: calc(80 * var(--basic-unit));
+}
+
+#head {
+  height: 30%;
+  border-top-left-radius: var(--basic-unit);
+  border-top-right-radius: var(--basic-unit);
+  border-top: solid #666;
+  border-width: calc(0.75 * var(--basic-unit));
+  background: -webkit-linear-gradient(top, rgb(70, 70, 70), rgb(40, 40, 40));
+}
+
+#head > div {
+  background: -webkit-linear-gradient(top, #282828, #000);
+  border-top: calc(0.05 * var(--basic-unit)) solid grey;
+  border-top-left-radius: calc(0.5 * var(--basic-unit));
+  border-top-right-radius: calc(0.5 * var(--basic-unit));
+  border-bottom: calc(0.2 * var(--basic-unit)) solid #c8c8c8;
+  bottom: 0;
+  width: 97%;
+  height: 92%;
+}
+
+#head > div > div {
+  background: -webkit-linear-gradient(top, rgb(220, 220, 220), rgb(170, 170, 170));
+  border-radius: var(--basic-unit);
+  width: 96%;
+  top: 7.5%;
+  height: 77.5%;
+}
+
+#screen {
+  background: -webkit-linear-gradient(top, rgb(110, 110, 100), rgb(95, 95, 80));
+  width: 75%;
+  border-top: solid rgb(80, 80, 65);
+  border-bottom: solid rgb(50, 50, 35);
+  border-left: solid rgb(50, 50, 35);
+  border-right: solid rgb(80, 80, 65);
+  border-width: calc(0.7 * var(--basic-unit)) calc(0.4 * var(--basic-unit)) calc(0.5 * var(--basic-unit));
+  border-radius: calc(0.5 * var(--basic-unit));
+  height: 87.5%;
+  left: 2%;
+}
+
+#screen > * {
+  font-family: digital;
+}
+
+#display {
+  width: 83%;
+  margin-right: var(--basic-unit);
+  height: 100%;
+  justify-content: flex-end;
+  font-size: calc(13 * var(--basic-unit));
+  letter-spacing: calc(0.75 * var(--basic-unit));
+}
+
+#noofdigits {
+  top: calc(0.65 * var(--basic-unit));
+  font-size: calc(3.75 * var(--basic-unit));
+  letter-spacing: calc(0.25 * var(--basic-unit));
+  left: calc(1.35 * var(--basic-unit));
+  height: calc(2.75 * var(--basic-unit));
+  width: calc(2.75 * var(--basic-unit));
+}
+
+#ex_op {
+  top: calc(3.35 * var(--basic-unit));
+  left: calc(0.5 * var(--basic-unit));
+  font-size: calc(1.75 * var(--basic-unit));
+  width: calc(1.75 * var(--basic-unit));
+  height: calc(1.6 * var(--basic-unit));
+}
+
+#op_sign {
+  width: calc(1.75 * var(--basic-unit));
+  height: calc(1.75 * var(--basic-unit));
+  font-size: calc(4 * var(--basic-unit));
+  right: calc(2 * var(--basic-unit));
+}
+
+#main {
+  height: 70%;
+  border-bottom-left-radius: calc(0.7 * var(--basic-unit));
+  border-bottom-right-radius: calc(0.7 * var(--basic-unit));
+  background: -webkit-linear-gradient(top, rgb(60, 60, 60), rgb(70, 70, 70));
+}
+
+#main > div:first-child {
+  height: 18%;
+  width: 97%;
+  border: solid #000;
+  border-width: 0 calc(0.2 * var(--basic-unit)) calc(0.2 * var(--basic-unit));
+  background: -webkit-linear-gradient(top, rgb(15, 15, 15), rgb(30, 30, 30));
+}
+
+#midSec {
+  left: 3%;
+  width: 37.5%;
+  height: 50%;
+}
+
+#midSec > div {
+  width: 45%;
+  justify-content: space-evenly;
+  border: 0.5px solid #222;
+  border-top: calc(0.6 * var(--basic-unit)) solid #214a56;
+  height: 100%;
+  background: #336b7c;
+}
+
+#midSec > div:last-child span {
+  font-size: calc(1.25 * var(--basic-unit));
+}
+
+#midSec > div:first-child span {
+  font-size: calc(1.75 * var(--basic-unit));
+}
+
+#solar_panel {
+  right: 6.25%;
+  width: 47.5%;
+  height: 65%;
+  border: calc(0.15 * var(--basic-unit)) solid #000;
+  border-bottom: calc(0.3 * var(--basic-unit)) solid rgb(5, 10, 5);
+  background: rgb(50, 60, 50);
+}
+
+#final {
+  height: 82%;
+  bottom: 0;
+  width: 95%;
+}
+
+#final > div {
+  height: 92%;
+  bottom: calc(0.5 * var(--basic-unit));
+  padding: 1.5%;
+  width: 42.5%;
+  border-width: calc(0.25 * var(--basic-unit)) calc(0.125 * var(--basic-unit));
+  border-style: solid;
+  flex-direction: column;
+}
+
+#final > div:first-child {
+  width: 15.5%;
+  border-left-width: calc(0.25 * var(--basic-unit));
+}
+
+#final > div:last-child {
+  border-right-width: calc(0.25 * var(--basic-unit));
+  flex-direction: row;
+}
+
+#sec1 > div {
+  background: #d9e1ae;
+  font-weight: bold;
+  border: solid #3d371a;
+  border-width: calc(0.5 * var(--basic-unit)) 0.5px 0;
+  border-top-color: #7f8566;
+  height: calc(4.5 * var(--basic-unit));
+  width: calc(9 * var(--basic-unit));
+}
+
+#sec1 > div:last-child {
+  height: calc(9 * var(--basic-unit));
+  background: #333;
+  color: teal;
+  font-weight: normal;
+  font-size: calc(3.375 * var(--basic-unit));
+  border-color: #222;
+}
+
+#final > div:not(:first-child) > div {
+  flex-direction: row;
+}
+
+#final > div:last-child > div {
+  flex-direction: column;
+}
+
+#final > div .secCom {
+  width: calc(9 * var(--basic-unit));
+  border: 0.5px solid #222;
+  border-top-width: calc(0.5 * var(--basic-unit));
+  height: calc(9 * var(--basic-unit));
+  background: #333;
+}
+
+#sec3 > div:first-child > .secCom:last-child {
+  height: calc(19.15 * var(--basic-unit));
+}
+
+#final .secCom, #sec1 > div, #midSec > div {
+  cursor: pointer;
+}
+
+#sec1 > div:not(:last-child) span {
+  font-size: calc(2.6 * var(--basic-unit));
+  top: calc(0.25 * var(--basic-unit));
+  left: calc(0.75 * var(--basic-unit));
+}
+
+#sec1 > div:nth-child(3) span {
+  font-size: calc(3.75 * var(--basic-unit));
+  top: 0;
+}
+
+#sec1 > div:nth-child(3) span:first-child {
+  top: calc(-0.4 * var(--basic-unit));
+  left: calc(0.5 * var(--basic-unit));
+}
+
+#sec1 > div:nth-child(3) span:nth-child(2) {
+  left: calc(2.5 * var(--basic-unit));
+  transform: rotateZ(5deg);
+}
+
+#sec1 > div:nth-child(3) span:last-child {
+  top: calc(-1.75 * var(--basic-unit));
+  left: calc(3.75 * var(--basic-unit));
+}
+
+#sec1 > div:nth-child(4) span:first-child {
+  font-size: calc(2.5 * var(--basic-unit));
+}
+
+#sec1 > div:nth-child(4) hr {
+  width: calc(1.75 * var(--basic-unit));
+  left: calc(2.05 * var(--basic-unit));
+  border-width: calc(0.25 * var(--basic-unit)) 0 0;
+  border-style: solid;
+}
+
+#sec1 > div:nth-child(4) span:last-child {
+  font-size: calc(2.5 * var(--basic-unit));
+  left: calc(2.25 * var(--basic-unit));
+}
+
+#final > div:not(:first-child) span {
+  font-size: calc(4.5 * var(--basic-unit));
+  left: var(--basic-unit);
+  top: calc(0.25 * var(--basic-unit));
+}
+
+#sec2 > div:last-child > .secCom:nth-child(2) > span {
+  font-size: calc(3 * var(--basic-unit));
+  top: calc(0.5 * var(--basic-unit));
+}
+
+#sec2 > div:last-child > .secCom:last-child > span {
+  top: calc(-3 * var(--basic-unit));
+  font-size: calc(5.5 * var(--basic-unit));
+}
+
+#sec3 #on {
+  background: #2da2a2;
+  border-top-color: #0b5555;
+}
+
+#sec3 #on > * {
+  font-size: calc(2 * var(--basic-unit));
+  left: calc(2 * var(--basic-unit));
+}
+
+#sec3 #on hr {
+  width: calc(3.75 * var(--basic-unit));
+  border: none;
+  border-top: calc(0.15 * var(--basic-unit)) solid #fff;
+  left: calc(1.7 * var(--basic-unit));
+  top: calc(3.125 * var(--basic-unit));
+}
+
+#sec3 #on span:last-child {
+  top: calc(3.5 * var(--basic-unit));
+  left: calc(2.25 * var(--basic-unit));
+}
+
+#sec3 > div:nth-child(2) > .secCom:first-child span {
+  font-size: calc(1.5 * var(--basic-unit));
+  top: calc(1.5 * var(--basic-unit));
+}
+
+#sec3 > div:nth-child(2) > .secCom:first-child span:last-child {
+  top: calc(3.5 * var(--basic-unit));
+}
+
+#sec3 > div:nth-child(2) > .secCom:nth-child(2) > span {
+  font-size: calc(3.5 * var(--basic-unit));
+  top: var(--basic-unit);
+}
+
+#sec3 > div:nth-child(2) > .secCom:nth-child(3) > span {
+  top: calc(-2.5 * var(--basic-unit));
+}
+
+#sec3 > div:last-child .secCom:not(:first-child) span:first-child {
+  font-size: calc(4 * var(--basic-unit));
+  top: calc(0.5 * var(--basic-unit));
+}
+
+#sec3 > div:last-child .secCom:not(:first-child) span:not(:first-child) {
+  font-size: calc(2.75 * var(--basic-unit));
+  left: calc(5 * var(--basic-unit));
+}
+
+#sec3 > div:last-child .secCom:not(:first-child) span:last-child {
+  top: calc(2 * var(--basic-unit));
+}
+
+#sec3 > div:last-child .secCom:nth-child(3) span:nth-child(2) {
+  font-size: calc(2.25 * var(--basic-unit));
+  top: calc(-0.5 * var(--basic-unit));
+  font-weight: bold;
+  left: calc(5.15 * var(--basic-unit));
+}
+
+#sec3 > div:last-child .secCom:nth-child(2) span:not(:first-child) {
+  top: calc(0.65 * var(--basic-unit));
+  font-size: calc(1.6 * var(--basic-unit));
+}
+
+#sec3 > div:last-child .secCom:nth-child(2) span:last-child {
+  top: calc(3 * var(--basic-unit));
+}
+
+#midSec > div:active {
+  background: #316879;
+}
+
+#final > div:not(:first-child) .secCom:active, #sec1 > div:last-child:active {
+  background: rgba(48, 48, 48, 1);
+}
+
+#sec3 #on:active {
+  background: #2b9d9d;
+}
+
+#final .secCom:active, #sec1 > div:active, #midSec > div:active {
+  border-top-width: 0.5px;
+}
+
+#sec1 > div:last-child:active, #sec2 .secCom:active, #sec3 .secCom:active {
+  height: calc(8.5 * var(--basic-unit));
+}
+
+#sec1 > div:active {
+  height: calc(4 * var(--basic-unit));
+  margin-bottom: calc(0.5 * var(--basic-unit));
+}
+
+#midSec > div:active {
+  height: calc(100% - calc(0.6 * var(--basic-unit)));
+}
+
+#sec3 .secCom:active {
+  margin-bottom: calc(0.5 * var(--basic-unit));
+}
+
+#sec3 > div:first-child > .secCom:last-child:active {
+  height: calc(18.65 * var(--basic-unit));
+}
+
+
+@media (orientation: portrait) {
+  :root {
+    --basic-unit: 1vw;
+  }
+}

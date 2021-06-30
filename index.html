@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Calcasio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="resources/calcasio-logo.png" type="image/x-icon">
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- linking jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+
+  <!-- web font loader -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+</head>
+
+<body>
+
+  <!-- loading screen -->
+  <div id="loadingScreen">
+    <img src="resources/calcasio-logo.png" alt="calcasio-logo">
+    <span>calcasio</span>
+  </div>
+
+  <!-- calculator body -->
+  <div id="calc_body">
+
+    <!-- header part -->
+    <div id="head">
+      <div>
+        <div>
+          <!-- Display screen -->
+          <div id="screen">
+            <div id="noofdigits"></div>
+            <div id="ex_op"></div>
+            <div id="display"></div>
+            <div id="op_sign"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- main body -->
+    <div id="main">
+
+      <!-- mid region -->
+      <div>
+
+        <!-- buttons in mid region -->
+        <div id="midSec">
+          <div>
+            <span>CHECK</span>
+          </div>
+
+          <div>
+            <span>CORRECT</span>
+            <span style="color: #000;">DELETE</span>
+          </div>
+        </div>
+
+        <!-- solar panel -->
+        <div id="solar_panel"></div>
+      </div>
+
+      <!-- main section -->
+      <div id="final">
+
+        <div id="sec1">
+          <div>
+            <span>GT</span>
+          </div>
+          <div>
+            <span>MU</span>
+          </div>
+          <div data-op="signRev">
+            <span>+</span>
+            <span>/</span>
+            <span>_</span>
+          </div>
+          <div data-op="sqrt">
+            <span>&radic;</span>
+            <hr>
+            <span>x</span>
+          </div>
+          <div>
+            <span>CE</span>
+          </div>
+        </div>
+
+        <div id="sec2">
+          <div>
+            <div class="secCom">
+              <span>7</span>
+            </div>
+            <div class="secCom">
+              <span>8</span>
+            </div>
+            <div class="secCom">
+              <span>9</span>
+            </div>
+          </div>
+          <div>
+            <div class="secCom">
+              <span>4</span>
+            </div>
+            <div class="secCom">
+              <span>5</span>
+            </div>
+            <div class="secCom">
+              <span>6</span>
+            </div>
+          </div>
+          <div>
+            <div class="secCom">
+              <span>1</span>
+            </div>
+            <div class="secCom">
+              <span>2</span>
+            </div>
+            <div class="secCom">
+              <span>3</span>
+            </div>
+          </div>
+          <div>
+            <div class="secCom">
+              <span>0</span>
+            </div>
+            <div class="secCom">
+              <span>00</span>
+            </div>
+            <div class="secCom">
+              <span>.</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="sec3">
+          <div>
+            <div class="secCom" data-op="div">
+              <span>&divide</span>
+            </div>
+            <div class="secCom" data-op="mul">
+              <span>&times</span>
+            </div>
+            <div class="secCom" data-op="add">
+              <span>+</span>
+            </div>
+          </div>
+          <div>
+            <div class="secCom">
+              <span>AUTO</span>
+              <span>REPLAY</span>
+            </div>
+            <div class="secCom">
+              <span>%</span>
+            </div>
+            <div class="secCom" data-op="dif">
+              <span>_</span>
+            </div>
+            <div class="secCom" data-op="eql">
+              <span>=</span>
+            </div>
+          </div>
+          <div>
+            <div class="secCom" id="on">
+              <span>ON</span>
+              <hr />
+              <span>AC</span>
+            </div>
+            <div class="secCom">
+              <span>M</span>
+              <span>R</span>
+              <span>C</span>
+            </div>
+            <div class="secCom">
+              <span>M</span>
+              <span>_</span>
+              <span>=</span>
+            </div>
+            <div class="secCom">
+              <span>M</span>
+              <span>+</span>
+              <span>=</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- linking custom js -->
+  <script type="text/javascript" src="operationHandling.js"></script>
+
+</body>
+
+</html>
