@@ -2,10 +2,6 @@
 
 <br/>
 
-![Calcasio](https://i.imgur.com/zCFt3Mz.png)
-
-<br/>
-
 ## Contents
 - [Overview](#overview) <br/>
 - [Skills Used](#skills_used) <br/>
